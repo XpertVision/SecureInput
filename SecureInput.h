@@ -12,6 +12,7 @@
 
 
 #include <iostream>
+#include <conio.h>
 
 #define BACKSPACE 8
 #define ENTER 13
