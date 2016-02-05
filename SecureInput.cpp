@@ -105,14 +105,14 @@ int SecureInput::Input(char *myString, unsigned int &resource)
 		cout << myString << chTemp;
 		buff = _getch();
 
-		if ((digit == 1) && (atoi(chTemp) == 0) && buff == '0'); //Only one zero at the beginning.
+		if ((digit == 1) && (strtoul(chTemp, NULL, 10) == 0) && buff == '0'); //Only one zero at the beginning.
 		else
 		{
 			if (isdigit(buff) && (digit < maxDigit)) //If the number of digits in length within int.
 			{
 				if (digit == 9) //If current length smaller of max length on one element.
 				{
-					testdig = atoi(chTemp);
+					testdig = strtoul(chTemp, NULL, 10);
 					if ((testdig < PRE_MAX_UNSIGN_INT) || ((testdig == PRE_MAX_UNSIGN_INT) && (buff < 54)))
 						//write from buffer if number smaller of PRE_MAX_UNSIGN_INT || number == PRE_MAX_UNSIGN_INT & buffer char in range '0' - '5'.
 					{
@@ -130,7 +130,7 @@ int SecureInput::Input(char *myString, unsigned int &resource)
 			{
 				if (buff == ENTER && digit > 0) //if have digit in string and press ENTER.
 				{
-					resource = atoi(chTemp); // convert to int.
+					resource = strtoul(chTemp, NULL, 10); // convert to int.
 					break;                   // break WHILE CYCLE.
 				}
 				else
@@ -291,7 +291,7 @@ int SecureInput::Input(char *myString, char *resource, int resourceLen)
 			}
 			else if ((buff == ENTER) && (newLen > 0)) //if press ENTER & string !='\0'. If you need empty string, change this: (newLen >= 0)!!!
 			{
-				strcpy(resource, chTemp); // copy from buffer in actual string.
+				strcpy_s(resource, resourceLen, chTemp); // copy from buffer in actual string.
 				delete[] chTemp; //!!! Delete dynamic massive.
 				break; //BREAK WHILE/
 			}
