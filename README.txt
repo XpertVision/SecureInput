@@ -9,3 +9,4 @@ ALL FUNCTIONS RETURN 1 IF SUCCED.
 Сlass written not a professional programmer. Performance may be low for this task. Oriented more to learning. Enjoy using.
 
 AUTHOR: MAXYM BEZUGLYY EMAIL: maxim.bez.1990@gmail.com
+Special thanks to Ivan Borsuk: https://github.com/bvs23bkv33
