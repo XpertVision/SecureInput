@@ -32,10 +32,15 @@ using namespace std;
 
 class SecureInput {
 public:
+        //myString: invitation to user; resource: variable to fill
 	int Input(char *myString, int &resource);
+	//myString: invitation to user; resource: variable to fill
 	int Input(char *myString, unsigned int &resource);
+	//myString: invitation to user; resource: variable to fill
 	int Input(char *myString, double &resource);
+	//myString: invitation to user; resource: variable to fill
 	int Input(char *myString, char &resource);
+	//myString: invitation to user; resource: variable to fill; resourceLen: massive length;
 	int Input(char *myString, char *resource, int resourceLen);
 };
 
